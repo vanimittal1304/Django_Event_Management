@@ -1,0 +1,28 @@
+<!-- event_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event List</title>
+</head>
+<body>
+    <h1>Event List</h1>
+
+    <ul>
+        {% for event in events %}
+        <li>
+            <h2>{{ event.title }}</h2>
+            <p>Date: {{ event.date }}</p>
+            <p>Time: {{ event.time }}</p>
+            <p>Location: {{ event.location }}</p>
+            <p>Capacity: {{ event.capacity }}</p>
+            <p>Categories: {{ event.categories }}</p>
+            <a href="{% url 'edit_event' event.id %}">Edit</a>
+            <a href="{% url 'delete_event' event.id %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'create_event' %}">Create New Event</a>
+</body>
+</html>

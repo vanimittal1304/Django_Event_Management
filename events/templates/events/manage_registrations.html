@@ -1,0 +1,23 @@
+<!-- manage_registrations.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Manage Registrations for {{ event.title }}</h2>
+    <ul>
+        {% for registration in registrations %}
+            <li>
+                {{ registration.user.username }} - {{ registration.status }}
+                <form action="{% url 'accept_registration' registration.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Accept</button>
+                </form>
+                <form action="{% url 'reject_registration' registration.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Reject</button>
+                </form>
+            </li>
+        {% empty %}
+            <li>No registrations found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

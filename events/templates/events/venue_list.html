@@ -1,0 +1,19 @@
+<!-- venue_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Venue List</h2>
+    <ul>
+        {% for venue in venues %}
+            <li>
+                <h3>{{ venue.name }}</h3>
+                <p>Capacity: {{ venue.capacity }}</p>
+                <p>Amenities: {{ venue.amenities }}</p>
+                <p>Availability: {{ venue.availability }}</p>
+                <!-- Add other venue details as needed -->
+            </li>
+        {% empty %}
+            <p>No venues found.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

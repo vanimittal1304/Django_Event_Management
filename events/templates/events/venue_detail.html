@@ -1,0 +1,25 @@
+<!-- venue_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ venue.name }}</h2>
+    <p>Capacity: {{ venue.capacity }}</p>
+    <p>Amenities: {{ venue.amenities }}</p>
+    <p>Availability: {{ venue.availability }}</p>
+    <!-- Add other venue details as needed -->
+
+    <h3>Upcoming Events at {{ venue.name }}</h3>
+    <ul>
+        {% for event in venue.upcoming_events %}
+            <li>
+                <h4>{{ event.title }}</h4>
+                <p>Date: {{ event.date }}</p>
+                <p>Time: {{ event.time }}</p>
+                <p>Location: {{ event.location }}</p>
+                <!-- Add other event details as needed -->
+            </li>
+        {% empty %}
+            <p>No upcoming events at this venue.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
