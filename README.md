@@ -14,7 +14,7 @@ The Event Management System is a web application built with Django that allows u
 
 1. Clone the repository:
   ```
-  git clone <repository_url>
+  git clone https://github.com/vanimittal1304/Django_Event_Management
   ```
 
 2. Install the required packages:
