@@ -49,6 +49,7 @@ The Event Management System is a web application built with Django that allows u
 
 The application provides the following API endpoints:
 
+- `/admin`: To access admin panel.
 - `/api/upcoming-events`: GET request to fetch a list of upcoming events.
 - `/api/filter-events`: GET request to filter events based on categories, tags, date, or location.
 - `/api/event-details/<event_id>`: GET request to get details of a specific event.
